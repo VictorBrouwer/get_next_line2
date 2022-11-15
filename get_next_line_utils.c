@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:15:51 by vbrouwer          #+#    #+#             */
-/*   Updated: 2022/11/11 12:15:48 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:14:18 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		}
 	}
 	return (dest);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	char			*p;
+	size_t			i;
+
+	p = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = c;
+		i++;
+	}
+	return (s);
 }

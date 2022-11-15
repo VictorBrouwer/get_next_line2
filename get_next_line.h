@@ -6,7 +6,7 @@
 /*   By: vbrouwer <vbrouwer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 10:18:19 by vbrouwer          #+#    #+#             */
-/*   Updated: 2022/11/10 13:15:51 by vbrouwer         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:42:10 by vbrouwer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <limits.h>
+
+# if BUFFER_SIZE < 1
+#  undef BUFFER_SIZE
+# endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
+#  define BUFFER_SIZE 10000
 # endif
 
 char	*get_next_line(int fd);
@@ -26,6 +31,7 @@ char	*obtain_line(char *buff, char *line);
 int		find_char(char *s, char c);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memmove(void *dest, const void *src, size_t n);
-char	*update(char *buff);
+void	update(char *buff);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif // GET_NEXT_LINE
